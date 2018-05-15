@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jam\\ServiceProvider"
+                "Jam\\JamServiceProvider"
             ]
         }
     }

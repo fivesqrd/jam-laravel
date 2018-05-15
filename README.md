@@ -8,7 +8,7 @@ composer require fivesqrd/jam
 
 .env requirements
 ```
-SESSION_DRIVER=jam
+SESSION_DRIVER=dynamodb
 SESSION_LIFETIME=1440
 SESSION_TABLE="My-Table-Name"
 

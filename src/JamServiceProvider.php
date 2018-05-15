@@ -2,13 +2,15 @@
 
 namespace Jam;
 
+use Illuminate\Foundation\Application as LaravelApplication;
+use Laravel\Lumen\Application as LumenApplication;
 use Illuminate\Support;
 use Aws\DynamoDb;
 
 /**
  * Atlas service provider
  */
-class ServiceProvider extends Support\ServiceProvider
+class JamServiceProvider extends Support\ServiceProvider
 {
     
     /**
@@ -18,12 +20,17 @@ class ServiceProvider extends Support\ServiceProvider
      */
     public function boot()
     {
-        /* Path to default config file */
-        $this->publishes([
-            dirname(__DIR__) . '/config/jam.php' => config_path('jam.php')
-        ]);
+        $source = realpath($raw = __DIR__ . '/../config/jam.php') ?: $raw;
 
-        Support\Facades\Session::extend('jam', function($app) {
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([$source => config_path('jam.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('jam');
+        }
+
+        $this->mergeConfigFrom($source, 'jam');
+
+        Support\Facades\Session::extend('dynamodb', function($app) {
             $config = $app->make('config')->get('jam');
 
             $client = new DynamoDb\DynamoDbClient($config['aws']);
@@ -47,8 +54,6 @@ class ServiceProvider extends Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/jam.php', 'jam'
-        );
+        //
     }
 }
