@@ -1,0 +1,31 @@
+{
+    "name": "fivesqrd/jam",
+    "description": "A Laravel 5 service provider for the AWS DynamoDB session handler.",
+    "keywords": ["laravel", "laravel 5"],
+    "type":"library",
+    "authors":[
+        {
+            "name":"Five Squared",
+            "homepage":"http://fivesqrd.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "aws/aws-sdk-php": "^3.55"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0|~5.0"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": { "Jam\\": "src/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jam\\ServiceProvider"
+            ]
+        }
+    }
+}
