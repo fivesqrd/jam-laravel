@@ -47,6 +47,8 @@ class ServiceProvider extends Support\ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            dirname(__DIR__) . '/config/jam.php', 'jam'
+        );
     }
 }
