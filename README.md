@@ -15,5 +15,5 @@ SESSION_TABLE="My-Table-Name"
 AWS_KEY="my-key"
 AWS_SECRET="my-secret"
 AWS_REGION="eu-west-1"
-#AWS_ENDPOINT="http://192.168.254.10:8000"
+AWS_ENDPOINT=
 ```

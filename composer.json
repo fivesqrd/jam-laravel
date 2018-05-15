@@ -19,12 +19,12 @@
     "suggest": {
     },
     "autoload": {
-        "psr-4": { "Jam\\": "src/" }
+        "psr-4": { "Fivesqrd\\Jam\\": "src/" }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Jam\\JamServiceProvider"
+                "Fivesqrd\\Jam\\JamServiceProvider"
             ]
         }
     }
