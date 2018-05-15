@@ -1,10 +1,9 @@
 <?php
 
-namespace Atlas\Laravel;
+namespace Jam;
 
-use Atlas;
 use Illuminate\Support;
-use Illuminate\Foundation\Application as LaravelApplication;
+use Aws\DynamoDb;
 
 /**
  * Atlas service provider
@@ -24,7 +23,7 @@ class ServiceProvider extends Support\ServiceProvider
             dirname(__DIR__) . '/config/jam.php' => config_path('jam.php')
         ]);
 
-        Session::extend('jam', function($app) {
+        Support\Facades\Session::extend('jam', function($app) {
             $config = $app->make('config')->get('jam');
 
             $client = new DynamoDb\DynamoDbClient($config['aws']);
