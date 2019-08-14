@@ -12,8 +12,8 @@ SESSION_DRIVER=dynamodb
 SESSION_LIFETIME=1440
 SESSION_TABLE="My-Table-Name"
 
-AWS_KEY="my-key"
-AWS_SECRET="my-secret"
-AWS_REGION="eu-west-1"
+AWS_ACCESS_KEY_ID="my-key"
+AWS_SECRET_ACCESS_KEY="my-secret"
+AWS_DEFAULT_REGION="eu-west-1"
 AWS_ENDPOINT=
 ```
