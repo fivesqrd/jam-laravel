@@ -3,7 +3,7 @@
 A Laravel 5 service provider for the AWS DynamoDB [session handler](https://aws.amazon.com/blogs/aws/scalable-session-handling-in-php-using-amazon-dynamodb/).
 
 ```
-composer require fivesqrd/jam
+composer require fivesqrd/jam-laravel
 ```
 
 .env requirements
