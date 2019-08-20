@@ -1,5 +1,5 @@
 {
-    "name": "fivesqrd/jam",
+    "name": "fivesqrd/jam-laravel",
     "description": "A Laravel 5 service provider for the AWS DynamoDB session handler.",
     "keywords": ["laravel", "laravel 5"],
     "type":"library",
