@@ -30,6 +30,10 @@ class JamServiceProvider extends Support\ServiceProvider
 
         $this->mergeConfigFrom($source, 'jam');
 
+        if ($this->app->runningInConsole()) {
+            $this->commands([JamTableCommand::class]);
+        }
+
         Support\Facades\Session::extend('dynamodb', function($app) {
             $config = $app->make('config')->get('jam');
 
