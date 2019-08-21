@@ -27,3 +27,24 @@ For [local DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developer
 ```
 php artisan make:jam
 ```
+
+## IAM Permissions ##
+Allowing the session handler access to the table requires the following IAM permissions:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+        {
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:dynamodb:<region>:<account-id>:table/<table-name>"
+        }
+    ]
+}
+```
