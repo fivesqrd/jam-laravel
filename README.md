@@ -2,6 +2,8 @@
 
 A Laravel 5 service provider for the AWS DynamoDB [session handler](https://aws.amazon.com/blogs/aws/scalable-session-handling-in-php-using-amazon-dynamodb/).
 
+NOTE: In the Laravel 5.8 [release notes](https://laravel.com/docs/5.8/releases) it was announced that DynamoDB session drivers are now baked into the framework itself. As a reault, this package should not be required for Laravel v5.8 and above.
+
 ```
 composer require fivesqrd/jam-laravel
 ```
